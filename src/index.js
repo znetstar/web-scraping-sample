@@ -108,9 +108,15 @@ async function getApproval(link, endYear = 2021) {
         .map(async (name) => {
             const results = await getApproval(...polls[name]);
 
-            return results.map(r => {
-                r.name = name;
+            const res = results.reverse();
 
+            let top = res[0];
+            let topWk = (top.startDate.getFullYear() *  52)+top.startDate.getMonth();
+
+            return res.map((r, i) => {
+                r.name = name;
+                let  wk =  (r.startDate.getFullYear() *  52)+r.startDate.getMonth();
+                r.week = wk-topWk;
                 return r;
             })
         }));
@@ -122,6 +128,7 @@ async function getApproval(link, endYear = 2021) {
     client.query(`
         DROP TABLE IF EXISTS records;
         CREATE TABLE records (
+            week int,
             startDate date,
             endDate date,
             approve int,
@@ -134,7 +141,7 @@ async function getApproval(link, endYear = 2021) {
     let lines = [];
     for (const group of allResults) {
         for (const record of group) {
-            lines.push(`INSERT INTO records (startDate, endDate, approve, disapprove, pollster, name) VALUES ('${record.startDate.toISOString()}', '${record.endDate.toISOString()}', ${record.approve}, ${record.disapprove}, '${record.pollster}', '${record.name}');`);
+            lines.push(`INSERT INTO records (week, startDate, endDate, approve, disapprove, pollster, name) VALUES (${record.week}, '${record.startDate.toISOString()}', '${record.endDate.toISOString()}', ${record.approve}, ${record.disapprove}, '${record.pollster}', '${record.name}');`);
         }
     }
 
