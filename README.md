@@ -1,6 +1,6 @@
 # Web Scraping Sample
 
-This project collects web scraping sample data from presidental approval polls taken from [realclearpolitics](https://realclearpolitics.com).
+This project aggregates the results from weekly American presidental  opinion. polls rega on taken from [realclearpolitics](https://realclearpolitics.com).
 
  ![Chart](./misc/chart.png)
 
