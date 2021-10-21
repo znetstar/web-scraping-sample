@@ -1,0 +1,23 @@
+{
+  "name": "web-scraping-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/znetstar/web-scraping-sample.git"
+  },
+  "author": "Zachary Boyd <zachary@zacharyboyd.nyc>",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/znetstar/web-scraping-sample/issues"
+  },
+  "homepage": "https://github.com/znetstar/web-scraping-sample#readme",
+  "dependencies": {
+    "pg": "^8.7.1",
+    "playwright": "^1.15.2"
+  }
+}
