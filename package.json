@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/znetstar/web-scraping-sample#readme",
   "dependencies": {
+    "jquery": "^3.6.0",
     "pg": "^8.7.1",
     "playwright": "^1.15.2"
   }
