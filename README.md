@@ -18,10 +18,12 @@ The node.js project uses the `playwright` browser automation library which in au
 
 # Run
 
+[A video detailing how to install all prerequisites on Mac is here.](https://youtu.be/WMfV3psBc7k).
+
 1. Copy `.env.sample` to `.env`
 2. Run `npm install`
 3. Start database with `docker-compose up -d postgres`
-3. Run `npm start`
+4. Run `npm start`
 
 ## License
 
